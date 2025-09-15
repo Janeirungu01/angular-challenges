@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #007bff;
+  color: #fff;
+}
+
+nav a {
+  margin-right: 16px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #dfefff;
+}
+
+nav button {
+  background: #fff;
+  color: #007bff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+nav button:hover {
+  background: #f1f1f1;
+}

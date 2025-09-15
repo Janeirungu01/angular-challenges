@@ -1,0 +1,10 @@
+<nav>
+  <a routerLink="/">Home</a>
+  @if(auth.isAuthenticated()) {
+  <a routerLink="/dashboard">Dashboard</a>
+  } @if(auth.isAuthenticated()){
+  <button (click)="logout()">Logout</button>
+  } @if(!auth.isAuthenticated()) {
+  <a routerLink="/login">Login</a>
+  }
+</nav>
