@@ -1,28 +1,32 @@
 <div class="login-container">
+  <h2>Login here!</h2>
+
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label>Email</label>
-    <input type="email" formControlName="email" />
+    <div>
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+      @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+      <div>Valid email is required</div>
+      }
+    </div>
 
-    @if(loginForm.controls['email'].invalid && loginForm.controls['email'].touched){
-    <div>Valid Email Required</div>
-    }
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password" />
+      @if(loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+      <div>Password is required</div>
+      }
+    </div>
 
-    <label>Password</label>
-    <input type="password" formControlName="password" />
-
-    @if(loginForm.controls['password'].invalid && loginForm.controls['password'].touched) {
-    <div>Password Required</div>
-    }
-
-    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
 
     @if(errorMessage) {
-    <p class="error">{{ errorMessage }}</p>
+    <div style="color: red">{{ errorMessage }}</div>
     }
   </form>
+
+  <!-- <p>Form valid? {{ loginForm.valid }}</p>
+  <p>Email valid? {{ loginForm.controls['email'].valid }}</p>
+  <p>Password valid? {{ loginForm.controls['password'].valid }}</p> -->
+
 </div>
-
-<p>Form valid? {{ loginForm.valid }}</p>
-<p>Email valid? {{ loginForm.controls['email'].valid }}</p>
-<p>Password valid? {{ loginForm.controls['password'].valid }}</p>
-
