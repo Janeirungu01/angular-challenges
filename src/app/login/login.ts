@@ -1,32 +1,44 @@
 import { Component } from '@angular/core';
-import { Authservice } from '../authservice';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule,} from '@angular/forms';
+import { Authservice } from '../authservice';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.scss',
+  styleUrls: ['./login.scss'],
 })
 export class Login {
   loginForm: FormGroup;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder, private auth: Authservice, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: Authservice,
+    private router: Router
+  ) {
+    
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required]],
     });
   }
 
-
   onSubmit() {
-    if (this.loginForm.valid) {
-      this.auth.login(this.loginForm.value).subscribe({
-        next: () => this.router.navigate(['/dashboard']),
-        error: (err) => (this.errorMessage = 'Invalid credentials'),
-      });
-    }
+    if (this.loginForm.invalid) return;
+
+    const { email, password } = this.loginForm.value;
+
+    this.authService.login({ email, password }).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        this.errorMessage =
+          err.error?.error || 'Login failed. Please try again.';
+      },
+    });
   }
 }
