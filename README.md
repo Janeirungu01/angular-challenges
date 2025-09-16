@@ -1,59 +1,44 @@
-# Reactiveforms
+#Angular Challenges
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+A demo project implementing two core challenges:
 
-## Development server
+Authentication Module with login/logout and route protection.
 
-To start a local development server, run:
+Data Table with Filtering & Pagination using external API data.
 
-```bash
-ng serve
-```
+🚀 Features
+###Task 1: Authentication Module
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Login form built with Angular Reactive Forms (or React forms).
 
-## Code scaffolding
+Uses ReqRes API
+ for authentication.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Validates email and password.
 
-```bash
-ng generate component component-name
-```
+Stores JWT token in localStorage/sessionStorage on successful login.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Authenticated status is shown in the navbar.
 
-```bash
-ng generate --help
-```
+Implements logout functionality.
 
-## Building
+Protects /dashboard route using Angular Route Guard - CanActivateFn.
 
-To build the project run:
 
-```bash
-ng build
-```
+##Task 2: Data Table with Filtering & Pagination
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Fetches user data from JSONPlaceholder API
 
-## Running unit tests
+(optionally FakeStore API).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Displays data in a responsive Angular Material table.
 
-```bash
-ng test
-```
+Supports:
 
-## Running end-to-end tests
+Pagination
 
-For end-to-end (e2e) testing, run:
+Search / filtering
 
-```bash
-ng e2e
-```
+Column sorting
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Clean UI with Angular Material styling.
