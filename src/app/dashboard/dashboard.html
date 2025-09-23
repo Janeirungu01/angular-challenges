@@ -1,3 +1,53 @@
-<p>Dashboard works!</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+  <app-card
+    title="Total Contributions"
+    [value]="250000"
+    color="red"
+    icon="fa-hand-holding-usd"
+    change="12.5%"
+    trend="up">
+  </app-card>
 
-<h1 class="text-2xl font-bold p-6">Welcome to Dashboard 🎉</h1>`
+  <app-card
+    title="Total Savings"
+    [value]="120000"
+    color="blue"
+    icon="fa-piggy-bank"
+    change="8.3%"
+    trend="up">
+  </app-card>
+
+  <app-card
+    title="Active Loans"
+    [value]="1020"
+    color="red"
+    icon="fa-money-bill-wave"
+    change="3.2%"
+    trend="down">
+  </app-card>
+
+  <app-card
+    title="Members"
+    [value]="1880"
+    color="green"
+    icon="fa-users"
+    change="4.2%"
+    trend="plus">
+  </app-card>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div class="bg-white shadow rounded p-4">
+    <h3 class="font-bold mb-2">Loan Performance</h3>
+    <div class="w-full h-64">
+      <canvas baseChart [data]="lineChartData" [options]="chartOptions" chartType="line"></canvas>
+    </div>
+  </div>
+
+  <div class="bg-white shadow rounded p-4 flex justify-center items-center">
+    <div class="w-full h-64 flex justify-center items-center">
+      <canvas baseChart [data]="doughnutChartData" [options]="chartOptions" [type]="'doughnut'"
+      ></canvas>
+    </div>
+  </div>
+</div>
