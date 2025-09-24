@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { Card } from '../shared/card/card';
+import { Card } from '../../shared/card/card';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,28 +10,6 @@ import { Card } from '../shared/card/card';
   styleUrl: './dashboard.scss'
 })
 export class Dashboard {
-
-  // chartOptions: ChartConfiguration['options'] = {
-  //   responsive: true,
-  //   plugins: { legend: { position: 'top' } }
-  // };
-
-  // lineChartData: ChartConfiguration['data'] = {
-  //   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-  //   datasets: [
-  //     { data: [60000, 80000, 100000, 120000, 140000, 160000], label: 'Loans Issued', borderColor: '#22c55e', fill: false },
-  //     { data: [20000, 30000, 50000, 60000, 70000, 80000], label: 'Repayments', borderColor: '#facc15', fill: false }
-  //   ]
-  // };
-
-  // doughnutChartData: ChartConfiguration['data'] = {
-  //   labels: ['Personal', 'Business', 'Education', 'Home Improvement', 'Emergency'],
-  //   datasets: [
-  //     { data: [30, 25, 20, 15, 10], backgroundColor: ['#22c55e', '#0ea5e9', '#f97316', '#8b5cf6', '#ef4444'] }
-  //   ]
-  // };
-
-
   chartOptions: ChartConfiguration['options'] = {
     responsive: true,
     plugins: { legend: { position: 'top' } }

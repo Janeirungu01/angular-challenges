@@ -5,7 +5,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { User, Userservice } from '../services/userservice';
+import { User, Userservice } from '../../services/userservice';
 
 @Component({
   selector: 'app-users',
