@@ -1,44 +1,57 @@
-Angular Challenges
+# 🔐 Angular Challenge: Authentication & Data Table
 
-A demo project implementing two core challenges:
+This project is an Angular app built to practice **authentication with route guards** and **data table handling** (pagination, filtering, and sorting).  
+It is divided into two main tasks:
 
-Authentication Module with login/logout and route protection.
+- **Task 1: Authentication Module**
+- **Task 2: Data Table with Filtering & Pagination**
 
-Data Table with Filtering & Pagination using external API data.
+---
 
-🚀 Features
-Task 1: Authentication Module
+## 🚀 Features
 
-Login form built with Angular Reactive Forms (or React forms).
+### Task 1: Authentication Module
+- Login form using **Angular Reactive Forms**
+- Input validation for **email** and **password**
+- Calls API: [reqres.in/login](https://reqres.in/api/login)
+- Stores JWT token in **localStorage/sessionStorage**
+- Displays **authenticated status** in navbar
+- Logout functionality
+- Protects `/dashboard` route using **Angular Guard**
 
-Uses ReqRes API
- for authentication.
+- test credentials username: **eve.holt@reqres.in** password: **cityslicka**
 
-Validates email and password.
+### Task 2: Data Table
+- Fetches data from:
+  - [JSONPlaceholder Users API](https://jsonplaceholder.typicode.com/users)  
+  - or [FakeStore API](https://fakestoreapi.com/)
+- Displays data in a **responsive Angular Material table**
+- Supports:
+  - Pagination
+  - Search/Filter
+  - Sorting by column headers
 
-Stores JWT token in localStorage/sessionStorage on successful login.
+---
 
-Authenticated status is shown in the navbar.
+## 🛠️ Tech Stack
+- [Angular](https://angular.io/) 20
+- Angular Reactive Forms
+- Angular Router (with Guards)
+- Angular Material (Table, Paginator, Sort)
+- TypeScript
+- HTML / CSS
 
-Implements logout functionality.
+---
 
-Protects /dashboard route using Angular Route Guard - CanActivateFn.
+## 📂 Project Setup
 
+Clone the repository:
+```bash
+git clone https://github.com/Janeirungu01/angular-challenges
+cd angular-challenges
 
-Task 2: Data Table with Filtering & Pagination
+#  install dependencies
+npm install
 
-Fetches user data from JSONPlaceholder API
-
-(optionally FakeStore API).
-
-Displays data in a responsive Angular Material table.
-
-Supports:
-
-Pagination
-
-Search / filtering
-
-Column sorting
-
-Clean UI with Angular Material styling.
+# run development server
+ng serve

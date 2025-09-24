@@ -8,7 +8,7 @@ import { Layout } from './layout/layout';
 import { RepaymentsTable } from './features/repayments-table/repayments-table';
 
 export const routes: Routes = [
-//   { path: 'login', component: Login },
+  { path: 'login', component: Login },
   { path: 'table', component: Users },
 
 //   { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
