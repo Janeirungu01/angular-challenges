@@ -49,9 +49,3 @@ Clone the repository:
 ```bash
 git clone https://github.com/Janeirungu01/angular-challenges
 cd angular-challenges
-
-#  install dependencies
-npm install
-
-# run development server
-ng serve
