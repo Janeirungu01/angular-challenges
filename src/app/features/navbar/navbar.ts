@@ -13,4 +13,5 @@ export class Navbar {
   logout() {
     this.auth.logout();
   }
+
 }

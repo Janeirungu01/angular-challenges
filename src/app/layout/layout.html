@@ -3,16 +3,13 @@
     <div class="p-4 text-2xl font-bold border-b">SACCO LMS</div>
     <nav class="flex-1">
       <ul class="space-y-2">
-        <li><a routerLink="/dashboard" class="block pl-4 p-2 hover:bg-green-700">Dashboard</a></li>
+        <li><a routerLinkActive="active-link" routerLink="/dashboard" class="block pl-4 p-2 ">Dashboard</a></li>
         <li>
-          <a routerLink="/users" class="block pl-4 p-2 hover:bg-green-700">Member Management</a>
+          <a routerLinkActive="active-link" routerLink="/users" class="block pl-4 p-2 ">Users Table</a>
         </li>
-        <li><a routerLink="/loans" class="block pl-4 p-2 hover:bg-green-700">Loan Applications</a></li>
-        <li>
-          <a routerLink="/disbursements" class="block pl-4 p-2 hover:bg-green-700">Disbursements</a>
-        </li>
-        <li><a routerLink="/repayments" class="block pl-4 p-2 hover:bg-green-700">Repayments</a></li>
-        <li><a routerLink="/reports" class="block pl-4 p-2 hover:bg-green-700">Reports</a></li>
+        <li><a routerLinkActive="active-link" routerLink="/contributions" class="block pl-4 p-2 ">Contributions</a></li>
+
+        <li><a routerLinkActive="active-link" routerLink="/reports" class="block pl-4 p-2 ">Reports</a></li>
       </ul>
     </nav>
     <div class="p-4 border-t">John Doe<br /><button class="text-sm">Sign out</button></div>
