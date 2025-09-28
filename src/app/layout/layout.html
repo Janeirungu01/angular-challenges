@@ -1,23 +1,53 @@
 <div class="flex h-screen">
-  <aside class="w-64 bg-green-900 text-white flex flex-col">
-    <div class="p-4 text-2xl font-bold border-b">SACCO LMS</div>
+  @if (isSidebarOpen) {
+  <div class="fixed inset-0 bg-black bg-opacity-50 lg:hidden" (click)="closeSidebar()"></div>
+  }
+
+  <aside
+    class="fixed inset-y-0 left-0 w-64 bg-green-900 text-white flex flex-col transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:relative"
+    [ngClass]="isSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+  >
+    <div class="flex items-center justify-between p-4 border-b">
+      <span class="text-2xl font-bold">SACCO LMS</span>
+      <button class="lg:hidden text-white text-2xl" (click)="closeSidebar()">&times;</button>
+    </div>
+
     <nav class="flex-1">
       <ul class="space-y-2">
-        <li><a routerLinkActive="active-link" routerLink="/dashboard" class="block pl-4 p-2 ">Dashboard</a></li>
         <li>
-          <a routerLinkActive="active-link" routerLink="/users" class="block pl-4 p-2 ">Users Table</a>
+          <a routerLinkActive="active-link" routerLink="/dashboard" class="block pl-4 p-2"
+            >Dashboard</a
+          >
         </li>
-        <li><a routerLinkActive="active-link" routerLink="/contributions" class="block pl-4 p-2 ">Contributions</a></li>
-
-        <li><a routerLinkActive="active-link" routerLink="/reports" class="block pl-4 p-2 ">Reports</a></li>
+        <li>
+          <a routerLinkActive="active-link" routerLink="/users" class="block pl-4 p-2"
+            >Users Table</a
+          >
+        </li>
+        <li>
+          <a routerLinkActive="active-link" routerLink="/contributions" class="block pl-4 p-2"
+            >Contributions</a
+          >
+        </li>
+        <li>
+          <a routerLinkActive="active-link" routerLink="/reports" class="block pl-4 p-2">Reports</a>
+        </li>
       </ul>
     </nav>
-    <div class="p-4 border-t">John Doe<br /><button class="text-sm">Sign out</button></div>
+
+    <div class="p-4 border-t">
+      John Doe <br />
+      <button class="text-sm">Sign out</button>
+    </div>
   </aside>
 
   <div class="flex-1 flex flex-col shadow-sm bg-sky-50">
-    <header class="flex justify-between items-center shadow h-16 bg-white">
-      <h1 class="text-lg font-bold p-2">{{ pageTitle }}</h1>
+    <header class="flex justify-between items-center shadow h-16 bg-white px-4">
+      <button class="lg:hidden bg-green-900 text-white px-3 py-2 rounded" (click)="toggleSidebar()">
+        ☰
+      </button>
+
+      <h1 class="text-lg font-bold">{{ pageTitle }}</h1>
       <button class="bg-red-600 text-white px-3 py-1 rounded">Logout</button>
     </header>
 

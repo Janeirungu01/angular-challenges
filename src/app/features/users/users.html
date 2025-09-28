@@ -1,44 +1,48 @@
-<div class="m-2 p-6 shadow overflow-x-auto border-collapse bg-white">
+<div class="m-2 p-6 shadow bg-white">
   <div class="mb-4">
     <input
       type="text"
       placeholder="Search users..."
-      class="w-full max-w-sm rounded-md text-gray-300 border border-gray-400 px-4 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+      class="w-full max-w-sm rounded-md text-gray-700 border border-gray-400 px-4 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
       [(ngModel)]="searchTerm"
       (input)="applyFilter()"
     />
   </div>
 
-  <table class="w-full border-collapse bg-white text-left">
-    <thead>
-      <tr class="bg-gray-100">
-        <th class="border px-4 py-2 font-semibold">ID</th>
-        <th class="border px-4 py-2 font-semibold">Name</th>
-        <th class="border px-4 py-2 font-semibold">Username</th>
-        <th class="border px-4 py-2 font-semibold">Email</th>
-        <th class="border px-4 py-2 font-semibold">Phone</th>
-        <th class="border px-4 py-2 font-semibold">Website</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (user of pagedUsers; track user.id) {
-      <tr>
-        <td class="border px-4 py-2">{{ user.id }}</td>
-        <td class="border px-4 py-2">{{ user.name }}</td>
-        <td class="border px-4 py-2">{{ user.username }}</td>
-        <td class="border px-4 py-2">{{ user.email }}</td>
-        <td class="border px-4 py-2">{{ user.phone }}</td>
-        <td class="border px-4 py-2">{{ user.website }}</td>
-      </tr>
-      }
-    </tbody>
-  </table>
+  <!-- Responsive wrapper -->
+  <div class="overflow-x-auto custom-scrollbar shadow-lg">
+    <table class="min-w-full border-collapse bg-white text-left text-sm">
+      <thead>
+        <tr class="bg-gray-100 text-gray-700">
+          <th class="border px-4 py-2 font-semibold">ID</th>
+          <th class="border px-4 py-2 font-semibold">Name</th>
+          <th class="border px-4 py-2 font-semibold">Username</th>
+          <th class="border px-4 py-2 font-semibold">Email</th>
+          <th class="border px-4 py-2 font-semibold">Phone</th>
+          <th class="border px-4 py-2 font-semibold">Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of pagedUsers; track user.id) {
+        <tr class="hover:bg-gray-50">
+          <td class="border px-4 py-2">{{ user.id }}</td>
+          <td class="border px-4 py-2">{{ user.name }}</td>
+          <td class="border px-4 py-2">{{ user.username }}</td>
+          <td class="border px-4 py-2">{{ user.email }}</td>
+          <td class="border px-4 py-2">{{ user.phone }}</td>
+          <td class="border px-4 py-2">{{ user.website }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 
   <mat-paginator
     [length]="filteredUsers.length"
     [pageSize]="pageSize"
     [pageSizeOptions]="[5, 10, 20]"
     (page)="onPageChange($event)"
+    class="mt-4"
   >
   </mat-paginator>
 </div>
