@@ -1,0 +1,59 @@
+<div class="max-w-3xl mx-auto mt-6 p-6 bg-white rounded-xl shadow-lg font-sans">
+  <h2 class="mb-4 text-2xl font-semibold text-gray-800">Chama Contributions</h2>
+
+  <form
+    (ngSubmit)="addContribution()"
+    #contributionForm="ngForm"
+    class="flex flex-wrap gap-3 mb-6"
+  >
+    <input
+      type="text"
+      [(ngModel)]="newContribution.memberName"
+      name="memberName"
+      placeholder="Member Name"
+      required
+      class="flex-1 min-w-[160px] px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-blue-500"
+    />
+    <input
+      type="number"
+      [(ngModel)]="newContribution.amount"
+      name="amount"
+      placeholder="Amount"
+      required
+      class="flex-1 min-w-[160px] px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-blue-500"
+    />
+    <button
+      type="submit"
+      class="px-4 py-2 rounded-md bg-green-700 text-white text-sm font-medium hover:bg-green-800 transition"
+    >
+      Add Contribution
+    </button>
+  </form>
+
+  <hr class="mb-4" />
+
+  <div class="overflow-x-auto">
+    <table class="w-full border-collapse text-sm text-left bg-white">
+      <thead>
+        <tr class="bg-gray-100 text-gray-700 font-semibold">
+          <th class="px-4 py-2 border">#</th>
+          <th class="px-4 py-2 border">Member Name</th>
+          <th class="px-4 py-2 border">Member ID</th>
+          <th class="px-4 py-2 border">Amount</th>
+          <th class="px-4 py-2 border">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (contribution of contributions; track contribution.id) {
+        <tr class="hover:bg-blue-50 transition">
+          <td class="px-4 py-2 border">{{ $index + 1 }}</td>
+          <td class="px-4 py-2 border">{{ contribution.memberName }}</td>
+          <td class="px-4 py-2 border">{{ contribution.memberID }}</td>
+          <td class="px-4 py-2 border">$ {{ contribution.amount }}</td>
+          <td class="px-4 py-2 border">{{ contribution.date }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
