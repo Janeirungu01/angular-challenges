@@ -1,6 +1,6 @@
 # 🔐 Angular Challenge: Authentication & Data Table
 
-This project is an Angular app built to practice **authentication with route guards** and **data table handling** (pagination, filtering, and sorting).  
+This project is an Angular app built to practice **authentication with route guards** and **data table handling** (pagination, filtering, and sorting) while consuming random apis.  
 It is divided into two main tasks:
 
 - **Task 1: Authentication Module**
@@ -37,7 +37,7 @@ It is divided into two main tasks:
 - [Angular](https://angular.io/) 20
 - Angular Reactive Forms
 - Angular Router (with Guards)
-- Angular Material (Table, Paginator, Sort)
+- Angular Material (Paginator, Sort)
 - TypeScript
 - HTML / CSS
 
